@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/lucko515/search-book-by-cover-server">
-    <img src="readme_mats/Icon.png" alt="Logo" width="80" height="80">
+    <img src="readme_mats/Icon.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Book Search Engine</h3>

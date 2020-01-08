@@ -165,4 +165,4 @@ Project Link: [https://github.com/lucko515/search-book-by-cover-server](https://
 [license-url]: https://github.com/lucko515/search-book-by-cover-server/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/luka-anicin/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: https://i.imgur.com/2QuZELm.gif

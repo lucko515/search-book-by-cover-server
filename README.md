@@ -74,7 +74,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-To run this project you'll need **Python 3.6 or later** and dependencies that you can find in the **requirements.txt**. 
+To run this project you'll need **Python 3.5 or later** and all dependencies listed in the **requirements.txt**. 
 
 To install all dependencies listend in the requirements file:
 

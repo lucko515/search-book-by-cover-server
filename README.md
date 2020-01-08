@@ -47,6 +47,7 @@
 <p align="center">
 <img src="readme_mats/project_demo.gif"></img>
 </p>
+
 There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
 
 Here's why:
@@ -110,12 +111,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Let's improve this project together! :-)
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. 
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature_name/NewFeature`)
+3. Commit your Changes (`git commit -m 'Explain your commit'`)
+4. Push to the Branch (`git push origin feature_name/NewFeature`)
 5. Open a Pull Request
 
 
@@ -139,6 +142,9 @@ Project Link: [https://github.com/lucko515/search-book-by-cover-server](https://
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Img Shields](https://shields.io)
+* [Readme Templates](https://github.com/othneildrew)
+* [DEep Local Features (DELF) paper](https://arxiv.org/pdf/1612.06321.pdf)
+* [DELF Reference implementation](https://www.dlology.com/blog/easy-landmark-image-recognition-with-tensorflow-hub-delf-module/)
 
 
 

@@ -157,11 +157,11 @@ Project Link: [https://github.com/lucko515/search-book-by-cover-server](https://
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/lucko515/search-book-by-cover-server.svg?style=flat-square
 [forks-url]: https://github.com/othneildrew/search-book-by-cover-server/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/lucko515/search-book-by-cover-server.svg?style=flat-square
 [stars-url]: https://github.com/othneildrew/search-book-by-cover-server/stargazers
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/lucko515/search-book-by-cover-server.svg?style=flat-square
 [license-url]: https://github.com/lucko515/search-book-by-cover-server/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/luka-anicin/

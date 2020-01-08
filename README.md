@@ -156,7 +156,6 @@ Project Link: [https://github.com/lucko515/search-book-by-cover-server](https://
 [stars-shield]: https://img.shields.io/github/stars/lucko515/search-book-by-cover-server.svg?style=flat-square
 [stars-url]: https://github.com/othneildrew/search-book-by-cover-server/stargazers
 [license-shield]: https://img.shields.io/github/license/lucko515/search-book-by-cover-server.svg?style=flat-square
-[license-url]: https://github.com/lucko515/search-book-by-cover-server/master/LICENSE.txt
+[license-url]: https://github.com/lucko515/search-book-by-cover-server/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/luka-anicin/
-[product-screenshot]: https://i.imgur.com/2QuZELm.gif

@@ -15,7 +15,7 @@
   <h3 align="center">Book Search Engine</h3>
 
   <p align="center">
-    An application that allows user to search for their favorte book just by taking a picture of it.
+    An application that allows user to search for their favorite book just by taking a picture of it.
     <br />
     <a href="https://github.com/lucko515/search-book-by-cover-server"><strong>Explore the docs »</strong></a>
     <br />

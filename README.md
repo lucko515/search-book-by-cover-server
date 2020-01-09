@@ -106,7 +106,7 @@ python(3) server.py
 ## Usage examples
 
 <p align="center"> 
-   <img src="readme_mats/book_search_exampe.jpg" alt="Example Image" width="400" height="900">
+   <img src="readme_mats/book_search_examples.jpg" alt="Example Image" width="550" height="900">
 </p>
   
 

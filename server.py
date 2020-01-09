@@ -46,7 +46,7 @@ def upload():
 	filename = werkzeug.utils.secure_filename(imagefile.filename)
 	imagefile.save(upload_dir + filename)
 
-	#inference
+	#Perform the inference process on the uploaded image
 	result = find_close_books(upload_dir + filename, 
 							upload_dir + filename, 
 							dataset_features, 
@@ -55,6 +55,7 @@ def upload():
 	results = pd.DataFrame(result)['index'].values
 	data = dataset.iloc[:len(dataset_features)].values[results]
 	
+	#Create resulting DataFrame object
 	result =  {}
 	columns = ['image', 'name', 'author', 'format', 'book_depository_stars', 'price', 'currency', 'old_price' ,'isbn', 'category']
 				

@@ -21,17 +21,21 @@ from skimage.transform import AffineTransform
 from itertools import accumulate
 
 
+#Create the TensorFlow graph object
 g = tf.Graph()
 
+#Load the DELF model from the TF Hub
 with g.as_default():
     model = hub.Module('https://tfhub.dev/google/delf/1') 
+
+    #Define image placeholder that supports RGB images of any sizes
     image_placeholder = tf.placeholder(
                     tf.float32, shape=(None, None, 3), name='input_image')
 
     module_inputs = {
                     'image': image_placeholder,
                     'score_threshold': 100.0,
-                    'image_scales': [0.25, 0.3536, 0.5, 0.7071, 1.0, 1.4142, 2.0],
+                    'image_scales': [0.25, 0.3536, 0.5, 0.7071, 1.0, 1.4142, 2.0], #these scales are taken form DELF paper
                     'max_feature_num': 1000,
                 }
 
@@ -59,22 +63,40 @@ def paths_to_image_loader(image_files):
 
 
 def resize_image(srcfile, destfile, new_width=128, new_height=128):
+    '''
+    Helper function that resizes an image to a specified new width and height.
+
+    srcfile - String, path to the original image
+    destfile - String, path where the resized image will be saved
+    new_width - Integer
+    new_height - Integer
+    '''
+    
+    #Opens the original image
     pil_image = Image.open(srcfile)
+    
+    #resizes the original image and convers it back to RGB format
     pil_image = ImageOps.fit(pil_image, (new_width, new_height), Image.ANTIALIAS)
     pil_image_rgb = pil_image.convert('RGB')
+    
+    #Saves the resized image to the disk
     pil_image_rgb.save(destfile, format='JPEG', quality=90)
     return destfile
 
 
 def query_image_features_generator(image_path):
-    
+    '''
+    This function takes newly uploaded image (Query image) and generates features with the pre-trained model for that image.
+    '''
     with tf.Session(graph=g) as s:
       
+        #prepairs the image for the model
         image_tf = paths_to_image_loader([image_path])
 
         with tf.train.MonitoredSession() as sess:
             image = sess.run(image_tf)
             print('Extracting locations and descriptors from %s' % image_path)
+            #Generate features
             return sess.run([module_outputs['locations'], module_outputs['descriptors']],feed_dict={image_placeholder: image})
 
 
@@ -118,7 +140,12 @@ def get_locations_2_use(image_db_index,
 
 
 def query_image_pipeline(image_path, save_path):
-    
+    '''
+    Model inference wrapper. This function queries the model with the Query image and generates its features.
+
+    image_path - String, path to the Query image
+    save_path - String, path where the Query image is saved
+    '''
     resized_image = resize_image(image_path, save_path)
     
     query_image_locations, query_image_descriptors = query_image_features_generator(resized_image,)
@@ -134,17 +161,31 @@ def find_close_books(image_path,
                      k_neighbors=10, 
                      top_n=10):
 
+    '''
+    The inference function. Call this function to get top n close images based on the query image;
+
+    image_path - String, path to the Query image
+    save_path - String, path where the Query image is saved
+    image_database - features generated based on the dataset
+    paths - Numpy array, paths to database images (used to display closesest images)
+    distance_threshold - Float, How similar two nodes should be in the KD tree
+    k_neighbors -  Integer, How many neighbors is looked at in the KD tree
+    top_n - Integer, How many similar images is retrieved
+    '''
+
     query_image_locations, query_image_descriptors, resized_image = query_image_pipeline(image_path,
                                                                        save_path,
                                                                        )
 
-    #Change this
+    #TODO: This section slows down the whole inference process and should be moved outside of the function
     locations_agg = np.concatenate([image_database[img][0] for img in paths])
     descriptors_agg = np.concatenate([image_database[img][1] for img in paths])
     accumulated_indexes_boundaries = list(accumulate([image_database[img][0].shape[0] for img in paths]))
     
-    d_tree = cKDTree(descriptors_agg) #izmesti ovo iz ove funkcije
+    #Create KD Tree
+    d_tree = cKDTree(descriptors_agg)
     
+    #Query the KD tree
     distances, indices = d_tree.query(query_image_descriptors,
                                       distance_upper_bound=distance_threshold, 
                                       k = k_neighbors,
@@ -163,7 +204,6 @@ def find_close_books(image_path,
     
     inliers_counts = []
 
-    img_1 = Image.open(resized_image)
     for index in unique_image_indexes:
         locations_2_use_query, locations_2_use_db = get_locations_2_use(index, indices, accumulated_indexes_boundaries, query_image_locations, locations_agg)
 

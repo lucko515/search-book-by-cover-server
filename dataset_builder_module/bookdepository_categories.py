@@ -1,3 +1,4 @@
+#Bookdepository manually selected links for scraping
 links = [
 "https://www.bookdepository.com/category/2/Art-Photography/browse/viewmode/all?page=",
 "https://www.bookdepository.com/category/213/Biography/browse/viewmode/all?page=",

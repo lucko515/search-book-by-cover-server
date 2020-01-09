@@ -22,7 +22,7 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 with open("dataset_features.pickle", 'rb') as f:
 	dataset_features = pickle.load(f)
 
-dataset = pd.read_csv("dataset/main_dataset.csv")
+dataset = pd.read_csv("dataset_builder_module/dataset/main_dataset.csv")
 
 
 #Define Flask app

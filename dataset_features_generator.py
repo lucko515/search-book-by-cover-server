@@ -49,7 +49,7 @@ def generate_dataset_vectors(paths):
 	return results_dict
 
 
-final_dataset = pd.read_csv("dataset/main_dataset.csv")
+final_dataset = pd.read_csv("dataset_builder_module/dataset/main_dataset.csv")
 rea_dict = generate_dataset_vectors(final_dataset.iloc[:, -1].values)
 with open("patike_features.pickle", 'wb') as f:
 	pickle.dump(rea_dict, f)

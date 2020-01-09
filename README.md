@@ -12,7 +12,7 @@
     <img src="readme_mats/Icon.png" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Book Search Engine</h3>
+  <h3 align="center">Book Search Engine (Server)</h3>
 
   <p align="center">
     An application that allows user to search for their favorite book just by taking a picture of it.

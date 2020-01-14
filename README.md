@@ -138,7 +138,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Luka Anicin - [@luka_anicin_fn](https://twitter.com/luka_anicin_fn) - luka.anicin@gmail.com
 
-Project Link: [https://github.com/lucko515/search-book-by-cover-server](https://github.com/lucko515/search-book-by-cover-server)
+Server of the project repo: [https://github.com/lucko515/search-book-by-cover-server](https://github.com/lucko515/search-book-by-cover-server)
+
+Android application front-end repo: [https://github.com/lucko515/search-book-by-cover-android-app](https://github.com/lucko515/search-book-by-cover-android-app)
 
 
 

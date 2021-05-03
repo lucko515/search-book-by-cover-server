@@ -33,6 +33,7 @@ def book_object_maker(book_source, converter, top_link):
 		book_json['name'] = book_source.find("div", {"class":"item-info"}).h3.text.strip()
 		book_json['author'] = book_source.find("div", {"class":"item-info"}).find("p", {'class':"author"}).text.strip()
 		book_json['format'] = book_source.find("div", {"class":"item-info"}).find("p", {'class':"format"}).text.strip()
+		book_json['publication_date'] = book_source.find("div", {"class":"item-info"}).find("p", {'class':"published"}).text.strip()
 		
 		#Counts the books' rating
 		number_of_starts = 0
@@ -61,7 +62,7 @@ def book_object_maker(book_source, converter, top_link):
 		book_json['category'] = top_link.split("/")[5]
 		
 		#Create DataFrame with books' info
-		book_frame = pd.DataFrame(columns=["image", "name", "author", "format", "book_depository_stars", "price", "currency", "old_price", "isbn", "category"])
+		book_frame = pd.DataFrame(columns=["image", "name", "author", "format", "publication_date", "book_depository_stars", "price", "currency", "old_price", "isbn", "category"])
 		bk = book_frame.append(book_json, ignore_index=True)
 		return bk
 	except Exception as e:
@@ -117,7 +118,7 @@ def books_scraper(dataset_dir, max_pages=333):
 	converter = CurrencyConverter()
 	
 	#Iterate through all links found in the bookdepository_categories.py file
-	for link in links:
+	for link in links[:1]:
 		print("Scraping: ", link)
 		category = link.split("/")[5]
 		category_folder = dataset_dir + category
@@ -135,4 +136,4 @@ def books_scraper(dataset_dir, max_pages=333):
 	complete_csv.to_csv(dataset_dir + "dataset.csv", index=False)
 
 if __name__ == "__main__":
-	books_scraper("dataset/", max_pages=33)
+	books_scraper("dataset/", max_pages=333)

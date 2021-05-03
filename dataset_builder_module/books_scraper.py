@@ -118,7 +118,7 @@ def books_scraper(dataset_dir, max_pages=333):
 	converter = CurrencyConverter()
 	
 	#Iterate through all links found in the bookdepository_categories.py file
-	for link in links[:1]:
+	for link in links:
 		print("Scraping: ", link)
 		category = link.split("/")[5]
 		category_folder = dataset_dir + category

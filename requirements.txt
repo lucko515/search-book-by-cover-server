@@ -11,7 +11,7 @@ Werkzeug==0.15.3
 requests==2.22.0
 tqdm==4.31.1
 imutils==0.5.2
-tensorflow==1.15.2
+tensorflow==2.5.1
 Pillow==7.0.0
 beautifulsoup4==4.8.2
 currency_converter==0.5.5

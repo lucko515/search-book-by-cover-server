@@ -7,7 +7,7 @@ scipy==1.2.1
 tensorflow_hub==0.6.0
 scikit_image==0.14.2
 matplotlib==3.0.3
-Werkzeug==0.15.3
+Werkzeug==0.15.5
 requests==2.22.0
 tqdm==4.31.1
 imutils==0.5.2
